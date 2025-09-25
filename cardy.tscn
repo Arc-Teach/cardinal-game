@@ -1,0 +1,44 @@
+[gd_scene load_steps=8 format=3 uid="uid://b5hr1ahxauxop"]
+
+[ext_resource type="Script" uid="uid://cusb7oeataxol" path="res://scripts/Player.gd" id="1_8p2og"]
+[ext_resource type="Texture2D" uid="uid://br5fasdh6iagc" path="res://sprites/Cardinal/Cardinal Flight 1.png" id="2_fftly"]
+[ext_resource type="Texture2D" uid="uid://dhqmkjqvg6g4s" path="res://sprites/Cardinal/Cardinal Flight 2.png" id="3_efvxo"]
+[ext_resource type="Texture2D" uid="uid://c6orvd85sj30l" path="res://sprites/Cardinal/Cardinal Flight 3.png" id="4_ksk01"]
+[ext_resource type="Texture2D" uid="uid://cyr551tgwlfe2" path="res://sprites/Cardinal/Cardinal Flight 4.png" id="5_nklhn"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_26xuy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_fftly")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_efvxo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ksk01")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_nklhn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bc84e"]
+radius = 8.0
+height = 104.0
+
+[node name="Cardy" type="CharacterBody2D"]
+script = ExtResource("1_8p2og")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.75, 0.75)
+sprite_frames = SubResource("SpriteFrames_26xuy")
+frame_progress = 0.761961
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(74, -11)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_bc84e")

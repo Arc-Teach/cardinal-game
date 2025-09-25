@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://bhs2skm2onkt8"]
+
+[ext_resource type="Script" uid="uid://cjmg883ttxwry" path="res://scripts/score_hoop.gd" id="1_hf4sp"]
+[ext_resource type="Texture2D" uid="uid://dkdrwxc6hcgee" path="res://sprites/hoop/HoopFront.png" id="1_wqej5"]
+[ext_resource type="Texture2D" uid="uid://5si5drsms7mi" path="res://sprites/hoop/HoopBack.png" id="2_hf4sp"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_500if"]
+radius = 4.72727
+height = 40.7273
+
+[node name="Score Hoop" type="Area2D"]
+scale = Vector2(2.75, 2.75)
+script = ExtResource("1_hf4sp")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(1.45455, -1.45455)
+texture = ExtResource("1_wqej5")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(0.363636, -1.45455)
+texture = ExtResource("2_hf4sp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_500if")

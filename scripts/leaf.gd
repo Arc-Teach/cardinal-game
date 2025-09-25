@@ -11,8 +11,8 @@ func _ready() -> void:
 	
 func _process(_delta: float) -> void:
 	position.y -= fall_speed
+	position.x -= 6
 	play("default")
 	if position.y > max_height:
 		position.y = -max_height
 		position.x = randi_range(-frame_width,frame_width)
-	
